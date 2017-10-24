@@ -1,5 +1,5 @@
 # myDijkstra
-Dijkstra's algorithm implementation in python3
+myDijkstra is a Dijkstra's algorithm implementation in python3
 
 ![SysML](/docs/SysML.png)
 
