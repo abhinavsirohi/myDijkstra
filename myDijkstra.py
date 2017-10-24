@@ -6,15 +6,15 @@
 ####
 ###############################################################################
 #Prérequis :
-        # 'Graphviz' (http://www.Graphviz.org)
-        # 'Simple Parser' développé par C. Delord (http://www.cdsoft.fr/sp)
+# - Graphviz (http://www.Graphviz.org)
+# - Simple Parser (http://www.cdsoft.fr/sp)
 
 
 #######################################################################
 ##### Bibliothèques & environement de travail
 import os, sys, subprocess
 import sp
-##os.chdir("/Users/Olivier/Desktop") #Permet de choisir un environement de travail autre que celui où est enregistré le programme Python
+##os.chdir("/Users/Olivier/Desktop") #Permet de choisir un environement de travail autre que celui où est enregistré 'myDijkstra.py'
 
 
 #######################################################################
@@ -113,7 +113,7 @@ class Graphe():
 
         #Création d'une page HTML pour afficher les résulats
         f = open("{}.html".format(self.nom), "w")
-        f.write("<html><head><title>Projet Informatique - ENS Cachan</title></head><body><h2>Graphe &eacute;tudi&eacute; : {}</h2><h6><i>R&eacutealis&eacute; par Olivier L&eacute;v&ecirc;que - 2014</i></h6>".format(self.nom))
+        f.write("<html><head><title>Projet Informatique myDijkstra - ENS Paris-Saclay</title></head><body><h2>Graphe &eacute;tudi&eacute; : {}</h2><h6><i>R&eacutealis&eacute; par Olivier L&eacute;v&ecirc;que - 2014</i></h6>".format(self.nom))
         
                 #Image du graphe#
         self.Graphviz(self.nom,self.listeArcs, itineraireComplet)
@@ -241,10 +241,10 @@ class Graphe():
 
 
 #######################################################################
-##### Début du programme #####
+##### Début de l'algorithme #####
 boucle = 1
 while boucle == 1:
-        name = input("Entrer le nom du fichier qui détient les données textuelles : ('Graphe1.txt' ou 'Graphe2.txt') ")
+        name = input("Entrer le nom du fichier qui détient les données textuelles : ('graph-examples/Graphe1.txt' ou 'graph-examples/Graphe2.txt') ")
         try:
                 doc = open(name, 'r', encoding='latin-1') #L'encoding en 'latin-1' pour ne pas avoir de soucis avec les accents
                 donnees=dechiffreur(doc.read())
@@ -265,7 +265,5 @@ while boucle == 1:
                 boucle = 0
         except IOError:
                 print(">>>>>> ATTENTION, le fichier que vous tentez d'ouvrir n'existe pas...\n____")
-
-        
-#Fin#
+##### Finde l'algorithme ##### 
         
